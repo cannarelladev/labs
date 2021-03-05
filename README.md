@@ -6,7 +6,6 @@ This repo is private
 
 ## Getting Started
 
-Composed by 4 Labs
 * [Labs 1](#) - first week
 * [Labs 2](#) - second week
 * [Labs 3](#) - third week
