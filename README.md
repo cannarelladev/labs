@@ -1,4 +1,7 @@
-# Labs 1 - 3
+# 3 Uomini e un Array [ AW-I Group 2020/21 ]
+*Nickname:* [@3UominiEUnArray](#)
+
+## Labs 1 - 3
 
 Main repo of Labs [1-3] team - Web Application I
 
@@ -23,8 +26,8 @@ example
 ## Authors
 
 * **Alessandro Cannarella** - 290713 - *[LinkedIn](https://www.linkedin.com/in/alessandro-cannarella/)*
-* **Danilo D'Antoni** - Matricola - *[LinkedIn](https://www.linkedin.com/in/)*
-* **Enrico Bravi** - Matricola - *[LinkedIn](https://www.linkedin.com/in/)*
+* **Danilo D'Antoni** - 276913 - *[LinkedIn](https://www.linkedin.com/in/)*
+* **Enrico Bravi** - 283938 - *[LinkedIn](https://www.linkedin.com/in/)*
 
 ## Licence
 
