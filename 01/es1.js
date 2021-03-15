@@ -21,6 +21,7 @@ function Tasks() {
     };
 
     this.filterAndPrint = () => {
+        console.log("HOPE");
         return 0;
     };
 
