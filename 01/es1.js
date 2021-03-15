@@ -15,7 +15,3 @@ function Tasks() {
         this.list.push(value);
     }
 }
-
-const filterAndPrint = () => {
-    
-}
