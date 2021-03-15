@@ -16,6 +16,19 @@ function Task(id, description, urgent = false, private_ = true, deadline){
 
 function Tasks() {
     this.list = [];
+    
+    this.open = () => {
+        return new Promise( (resolve, reject) => {
+            const db = new sqlite.Database('tasks.db', (err) => {
+                if(err)
+                    reject(err);
+                else{
+                    this.db = db;
+                    resolve(db);
+                }
+            });
+        });
+    };
 
     this.add = (value) => {
         this.list.push(value);
