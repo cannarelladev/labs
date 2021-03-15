@@ -15,3 +15,7 @@ function Tasks() {
         this.list.push(value);
     }
 }
+
+const filterAndSort = () => {
+    
+}
