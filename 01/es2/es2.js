@@ -68,6 +68,38 @@ function Tasks() {
         });
     };
 
+    this.loadAll = async() => {
+        const query = 'SELECT * FROM tasks';
+        return this.db.all(query, (err, rows) => {
+            if (err) throw (err)
+            else {
+                for (let row of rows){
+                    const temp = new Task (row.id, row.description, ((row.urgent)? true : false), ((row.private)? true : false), row.deadline);
+                    this.list.push(temp);
+                    console.log(temp.toString());
+                }
+            }
+        })
+    }
+
+    /**
+    this.loadAll = () => {
+        return new Promise((resolve, reject) => {
+            const query = 'SELECT * FROM tasks';
+            this.db.all(query, [], (err, rows) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    for (let row of rows){
+                        const temp = new Task (row.id, row.description, ((row.urgent)? true : false), ((row.private)? true : false), row.deadline);
+                        this.list.push(temp);
+                        console.log(temp.toString());
+                    }
+                    resolve(rows);
+                }
+            })
+        })
+    }*/
 
 }
 
@@ -79,6 +111,8 @@ const main = async () => {
 
     const afterDeadLine = await tasksList.queryDeadLine("2021-03-16");
     afterDeadLine.forEach( a => console.log(a.toString()) );
+
+    await tasksList.loadAll();
 };
 
 main();
