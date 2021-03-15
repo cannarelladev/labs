@@ -1,18 +1,19 @@
-'use strict'
+"use strict";
 
-const array = ['spring', 'winter', 'car', 'a', 'in', 'politecnico'];
+const name1 = ["spring", "winter", "summer", "a", "cia", "al"];
 
-console.log(array);
+console.log(name1);
 
-for(let i=0; i<array.length; i++){
-    if(array[i].length < 2){
-        array[i] = "";
-    }
-    else{
-        array[i] = array[i][0] + array[i][1] + array[i][array[i].length - 2 ] + array[i][array[i].length - 1];
+const reduction = (array) => {
+    for (let i=0; i < array.length; i++) {
+        if (array[i].length < 2) {
+            array[i] = "";
+        } else {
+            array[i] = `${array[i][0]}${array[i][1]}${array[i][array[i].length-2]}${array[i][array[i].length-1]}`;
+        }
     }
 }
 
-console.log(array);
+reduction(name1);
 
-//debugger;
+console.log(name1);
