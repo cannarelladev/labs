@@ -68,6 +68,21 @@ function Tasks() {
         });
     };
 
+    this.queryWord = (word) => {
+        return new Promise((resolve, reject) => {
+            const sql = 'SELECT * FROM tasks';
+            this.db.all(sql, [], (err, rows) => {
+                if(err){
+                    reject(err);
+                }
+                else{
+                    const res = rows.map( a => new Task(a.id, a.description, a.urgent, a.private, a.deadline)).filter( a => a.description.split(" ").includes(word));
+                    resolve(res);
+                }
+            });
+        });
+    };
+
 
 }
 
@@ -79,6 +94,9 @@ const main = async () => {
 
     const afterDeadLine = await tasksList.queryDeadLine("2021-03-16");
     afterDeadLine.forEach( a => console.log(a.toString()) );
+
+    const constainsWord = await tasksList.queryWord("call");
+    constainsWord.forEach( a => console.log(a.toString()) );
 };
 
 main();
