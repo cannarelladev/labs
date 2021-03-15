@@ -1,8 +1,8 @@
 "use strict";
 
-const name1 = ["spring", "winter", "summer", "a", "cia", "al"];
+const names = ["spring", "winter", "summer", "a", "cia", "al"];
 
-console.log(name1);
+console.log(names);
 
 const reduction = (array) => {
     for (let i=0; i < array.length; i++) {
@@ -14,6 +14,6 @@ const reduction = (array) => {
     }
 }
 
-reduction(name1);
+reduction(names);
 
-console.log(name1);
+console.log(names);
