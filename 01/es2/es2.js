@@ -75,6 +75,8 @@ function Tasks() {
 const main = async () => {
     const tasksList = new Tasks();
 
+    await tasksList.open();
+
     const afterDeadLine = await tasksList.queryDeadLine("2021-03-16");
     afterDeadLine.forEach( a => console.log(a.toString()) );
 };
