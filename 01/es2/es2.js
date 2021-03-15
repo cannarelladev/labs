@@ -53,22 +53,30 @@ function Tasks() {
         definedUrgent.forEach( task => console.log(task.toString()) );
     };
 
+    this.queryDeadLine = (date) => {
+        return new Promise((resolve, reject) => {
+            const sql = 'SELECT * FROM tasks WHERE deadline > DATE(?)';
+            this.db.all(sql, [date], (err, rows) => {
+                if(err){
+                    reject(err);
+                }
+                else{
+                    const res = rows.map( a => new Task(a.id, a.description, a.urgent, a.private, a.deadline) );
+                    resolve(res);
+                }
+            });
+        });
+    };
+
+
 }
 
-const task1 = new Task(4, 'Fare la spesa', false, true, "2021-03-25T10:00:00");
-const task2 = new Task(5, 'Dentista', true, true, "2021-03-12T12:00:00");
-const task3 = new Task(6, 'Meccanico', false, true);
-const task4 = new Task(7, 'Lezione', false, false, "2021-04-01T09:00:00");
-const task5 = new Task(8, 'Appuntamento in banca');
 
-let tasksList = new Tasks();
-tasksList.add(task1);
-tasksList.add(task2);
-tasksList.add(task3);
-tasksList.add(task4);
-tasksList.add(task5);
+const main = async () => {
+    const tasksList = new Tasks();
 
-console.log("-- Sort and Print --");
-tasksList.sortAndPrint();
-console.log("-- Filter and Print --");
-tasksList.filterAndPrint();
+    const afterDeadLine = await tasksList.queryDeadLine("2021-03-16");
+    afterDeadLine.forEach( a => console.log(a.toString()) );
+};
+
+main();
