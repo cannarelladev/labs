@@ -55,11 +55,11 @@ function Tasks() {
 
 }
 
-const task1 = new Task(1, 'Fare la spesa', false, true, "2021-03-25T10:00:00");
-const task2 = new Task(2, 'Dentista', true, true, "2021-03-12T12:00:00");
-const task3 = new Task(3, 'Meccanico', false, true);
-const task4 = new Task(4, 'Lezione', false, false, "2021-04-01T09:00:00");
-const task5 = new Task(5, 'Appuntamento in banca');
+const task1 = new Task(4, 'Fare la spesa', false, true, "2021-03-25T10:00:00");
+const task2 = new Task(5, 'Dentista', true, true, "2021-03-12T12:00:00");
+const task3 = new Task(6, 'Meccanico', false, true);
+const task4 = new Task(7, 'Lezione', false, false, "2021-04-01T09:00:00");
+const task5 = new Task(8, 'Appuntamento in banca');
 
 let tasksList = new Tasks();
 tasksList.add(task1);
