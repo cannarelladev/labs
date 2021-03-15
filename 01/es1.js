@@ -9,7 +9,7 @@ function Task(id, description, urgent = false, private_ = true, deadline){
     this.deadline = deadline;
 
     this.toString = () => {
-        return `Task -> Id = ${this.id}, Description = ${this.description}, Urgent = ${this.urgent}, Private = ${this.private_}, Dealine = ${this.deadline || "undefined"}\n`;
+        return `Task -> Id = ${this.id}, Description = ${this.description}, Urgent = ${this.urgent}, Private = ${this.private_}, Dealine = ${this.deadline ? dayjs(this.deadline).format('DD/MM/YYYY') : "undefined"}`;
     };
 }
 
@@ -25,13 +25,13 @@ function Tasks() {
         let notDefinedDeadline = this.list.filter ( el => el.deadline==undefined );
 
         definedDeadline.sort( (a,b) => {
-            if(a.deadline.isBefore(b.deadline)) return -1;
-            else if(a.deadline.isSame(b.deadline)) return 0;
+            if(dayjs(a.deadline).isBefore(dayjs(b.deadline))) return -1;
+            else if(dayjs(a.deadline).isSame(dayjs(b.deadline))) return 0;
             else return 1;
         });
 
         this.list = [...definedDeadline, ...notDefinedDeadline]; 
-        console.log(`${this.list}`);
+        this.list.forEach( a => console.log(a.toString()) );
     };
 
     this.filterAndPrint = () => {
@@ -41,10 +41,10 @@ function Tasks() {
 
 }
 
-const task1 = new Task(1, 'Fare la spesa', false, true, dayjs("2021-03-25"));
-const task2 = new Task(2, 'Dentista', true, true, dayjs("2021-03-12"));
+const task1 = new Task(1, 'Fare la spesa', false, true, "2021-03-25");
+const task2 = new Task(2, 'Dentista', true, true, "2021-03-12");
 const task3 = new Task(3, 'Meccanico', false, true);
-const task4 = new Task(4, 'Lezione', false, false, dayjs("2021-04-01"));
+const task4 = new Task(4, 'Lezione', false, false, "2021-04-01");
 const task5 = new Task(5, 'Appuntamento in banca');
 
 let tasksList = new Tasks();
