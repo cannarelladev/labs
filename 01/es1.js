@@ -16,8 +16,16 @@ function Tasks() {
     }
 
     this.sortAndPrint = () => {
-        console.log('Hello world'); 
-        return 0; 
+        let definedDeadline = this.list.filter( el => el.deadline!=undefined );
+        let notDefinedDeadline = this.list.filter ( el => el.deadline==undefined );
+
+        definedDeadline.sort( (a,b) => {
+            if(a.deadline.isBefore(b.deadline)) return -1;
+            else if(a.deadline.isSame(b.deadline)) return 0;
+            else return 1;
+        });
+
+        this.list = [...definedDeadline, ...notDefinedDeadline]; 
     };
 
     this.filterAndPrint = () => {
