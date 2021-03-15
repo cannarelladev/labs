@@ -15,5 +15,5 @@ function Tasks() {
         this.list.push(value);
     }
 
-    
+    let sort = () => {};
 }
