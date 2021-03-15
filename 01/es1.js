@@ -9,7 +9,7 @@ function Task(id, description, urgent = false, private_ = true, deadline){
     this.deadline = deadline;
 
     this.toString = () => {
-        return `Task -> Id = ${this.id}, Description = ${this.description}, Urgent = ${this.urgent}, Private = ${this.private_}, Dealine = ${this.deadline ? dayjs(this.deadline).format('DD/MM/YYYY') : "undefined"}`;
+        return `Task -> Id = ${this.id}, Description = ${this.description}, Urgent = ${this.urgent}, Private = ${this.private_}, Dealine = ${this.deadline ? dayjs(this.deadline).format('DD/MM/YYYY HH:mm:ss') : "undefined"}`;
     };
 }
 
@@ -41,10 +41,10 @@ function Tasks() {
 
 }
 
-const task1 = new Task(1, 'Fare la spesa', false, true, "2021-03-25");
-const task2 = new Task(2, 'Dentista', true, true, "2021-03-12");
+const task1 = new Task(1, 'Fare la spesa', false, true, "2021-03-25T10:00:00");
+const task2 = new Task(2, 'Dentista', true, true, "2021-03-12T12:00:00");
 const task3 = new Task(3, 'Meccanico', false, true);
-const task4 = new Task(4, 'Lezione', false, false, "2021-04-01");
+const task4 = new Task(4, 'Lezione', false, false, "2021-04-01T09:00:00");
 const task5 = new Task(5, 'Appuntamento in banca');
 
 let tasksList = new Tasks();
