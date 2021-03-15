@@ -14,6 +14,8 @@ function Tasks() {
     this.add = (value) => {
         this.list.push(value);
     }
+}
 
+const filterAndPrint = () => {
     
 }
