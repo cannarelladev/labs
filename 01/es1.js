@@ -35,8 +35,8 @@ function Tasks() {
     };
 
     this.filterAndPrint = () => {
-        console.log("HOPE");
-        return 0;
+        const definedUrgent = [ ...this.list.filter( task => task.urgent === true )];
+        definedUrgent.forEach( task => console.log(task.toString()) );
     };
 
 }
@@ -54,4 +54,7 @@ tasksList.add(task3);
 tasksList.add(task4);
 tasksList.add(task5);
 
+console.log("-- Sort and Print --");
 tasksList.sortAndPrint();
+console.log("-- Filter and Print --");
+tasksList.filterAndPrint();
