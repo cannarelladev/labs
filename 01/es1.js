@@ -6,4 +6,12 @@ function Task(id, description, urgent = false, private = true, deadline){
     this.urgent = urgent;
     this.private = private;
     this.deadline = deadline;
-} 
+}
+
+function Tasks() {
+    this.list = [];
+
+    this.add = (value) => {
+        this.list.push(value);
+    }
+}
