@@ -17,6 +17,8 @@ function Tasks() {
 
     this.sortAndPrint = () => { return 0; };
 
-    this.filterAndPrint = () => {};
+    this.filterAndPrint = () => {
+        return 0;
+    };
 
 }
