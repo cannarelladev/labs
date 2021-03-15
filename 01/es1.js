@@ -15,7 +15,9 @@ function Tasks() {
         this.list.push(value);
     }
 
-    this.sortAndPrint = () => { return 0; };
+    this.sortAndPrint = () => { 
+        return 0; 
+    };
 
     this.filterAndPrint = () => {};
 
