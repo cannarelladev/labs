@@ -67,7 +67,7 @@ function Tasks() {
             });
         });
     };
-
+    
     this.queryWord = (word) => {
         return new Promise((resolve, reject) => {
             const sql = 'SELECT * FROM tasks';
@@ -83,6 +83,38 @@ function Tasks() {
         });
     };
 
+    this.loadAll = async() => {
+        const query = 'SELECT * FROM tasks';
+        return this.db.all(query, (err, rows) => {
+            if (err) throw (err)
+            else {
+                for (let row of rows){
+                    const temp = new Task (row.id, row.description, ((row.urgent)? true : false), ((row.private)? true : false), row.deadline);
+                    this.list.push(temp);
+                    console.log(temp.toString());
+                }
+            }
+        })
+    }
+
+    /**
+    this.loadAll = () => {
+        return new Promise((resolve, reject) => {
+            const query = 'SELECT * FROM tasks';
+            this.db.all(query, [], (err, rows) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    for (let row of rows){
+                        const temp = new Task (row.id, row.description, ((row.urgent)? true : false), ((row.private)? true : false), row.deadline);
+                        this.list.push(temp);
+                        console.log(temp.toString());
+                    }
+                    resolve(rows);
+                }
+            })
+        })
+    }*/
 
 }
 
@@ -91,12 +123,17 @@ const main = async () => {
     const tasksList = new Tasks();
 
     await tasksList.open();
-
+    
+    console.log('-- After Deadline --');
     const afterDeadLine = await tasksList.queryDeadLine("2021-03-16");
     afterDeadLine.forEach( a => console.log(a.toString()) );
 
+    console.log('\n-- Contains Word --');
     const constainsWord = await tasksList.queryWord("call");
     constainsWord.forEach( a => console.log(a.toString()) );
+
+    console.log('\n-- Load All --');
+    await tasksList.loadAll();
 };
 
 main();
