@@ -1,12 +1,13 @@
-.col-lg-4 .list-group-item.active {
-    background-color: green;
-}
 
-.col-lg-4 .list-group-item {
+.list-group-item {
     background-color: rgb(206, 206, 206);
 }
 
-.col-lg-4 {
+.list-group-item.active {
+    background-color: green;
+}
+
+.sidebar {
     background-color: rgb(206, 206, 206);
 }
 
