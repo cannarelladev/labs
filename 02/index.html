@@ -19,40 +19,48 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="container-fluid">
-
-      <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8eec8e;">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="file:///Users/danilodantoni/Desktop/AWI/labs/02/725259.png" alt="" width="30" height="24" class="d-inline-block align-top"> 3Uomini&1Array
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-            </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                
-                
-                <li class="nav-item">
-                  
-                </li>
-              </ul>
-              <form class="d-flex justify-content-end">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
+    <header>
+      <nav class="navbar bg-primary d-flex justify-content-between custom-navbar">
+          <div>
+            <span class="align-middle navbar-title"><i class="fas fa-check-double"></i>Todo List</span>
           </div>
-        </nav>
-      </header>
-      <div class="row">
+          <div>
+            <form class="d-flex justify-content-end">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+          </div>
+          <div>
+            <span class="align-middle navbar-title"><i class="far fa-user-circle"></i></span>
+          </div>
+        <!-- 
+        
+
+        
+              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              
+              
+              <li class="nav-item">
+                
+              </li>
+            </ul>
+            
+          </div>
+          -->
+      </nav>
+    </header>
+    <div class="container-fluid">
+      <div class="row flex-grow-1">
         <div class="col-lg-4 sidebar pt-2">
           <!--menu-->
           <div class="list-group list-group-flush">
@@ -68,36 +76,25 @@
         <div class="col-lg-8">
           <!--tabella-->
           <h1>ALL</h1>
-          <div class="row">
-              <table class="table">
-                <thead>
-                  <tr class="d-flex">
-                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="col">Complete</th>
-                    <th class="col-lg-6 d-flex flex-column align-items-center" scope="col">Description</th>
-                    <th class="col-lg-2 d-flex flex-column align-items-center" scope="col">Privilegies</th>
-                    <th class="col-lg-3 d-flex flex-column align-items-center" scope="col">Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="d-flex">
-                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" checked>
-                      </div>
-                    </th>
-                    <td class="col-lg-6">Lista della spesa</td>
-                    <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
-                    <td class="col-lg-3 d-flex flex-column align-items-end">Monday 22 March 2021 at 14:30</td>
-                  </tr>
-                  <tr class="d-flex">
-                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="">
-                      </div>
-                    </th>
-                    <td class="col-lg-6">Chiamare Mamma</td>
-                    <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
-                    <td class="col-lg-3 d-flex flex-column align-items-end">Sunday 29 March 2021 at 11:00</td>
+            <table class="table">
+              <thead>
+                <tr class="d-flex">
+                  <th class="col-lg-1 d-flex flex-column align-items-center" scope="col">Complete</th>
+                  <th class="col-lg-6 d-flex flex-column align-items-center" scope="col">Description</th>
+                  <th class="col-lg-2 d-flex flex-column align-items-center" scope="col">Privilegies</th>
+                  <th class="col-lg-3 d-flex flex-column align-items-center" scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="d-flex">
+                  <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" checked>
+                    </div>
+                  </th>
+                  <td class="col-lg-6">Lista della spesa</td>
+                  <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
+                  <td class="col-lg-3 d-flex flex-column align-items-end">Monday 22 March 2021 at 14:30</td>
                 </tr>
                 <tr class="d-flex">
                   <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
@@ -105,13 +102,22 @@
                       <input class="form-check-input" type="checkbox" value="">
                     </div>
                   </th>
-                  <td class="urgent col-lg-6">Completare Labs 2</td>
-                  <td class="col-lg-2 d-flex flex-column align-items-center"></td>
-                  <td class="col-lg-3 d-flex flex-column align-items-end">Saturday 28 March 2021</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                  <td class="col-lg-6">Chiamare Mamma</td>
+                  <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
+                  <td class="col-lg-3 d-flex flex-column align-items-end">Sunday 29 March 2021 at 11:00</td>
+              </tr>
+              <tr class="d-flex">
+                <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="">
+                  </div>
+                </th>
+                <td class="urgent col-lg-6">Completare Labs 2</td>
+                <td class="col-lg-2 d-flex flex-column align-items-center"></td>
+                <td class="col-lg-3 d-flex flex-column align-items-end">Saturday 28 March 2021</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 

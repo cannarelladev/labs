@@ -1,3 +1,6 @@
+.bg-primary {
+    background-color: green !important;
+}
 
 .list-group-item {
     background-color: rgb(206, 206, 206);
@@ -14,4 +17,16 @@
 .table td.urgent{
     color: red !important;
 
+}
+
+nav.custom-navbar{
+    color: white;
+}
+
+span.navbar-title{
+    font-size: 18pt;
+}
+
+.container-fluid {
+    min-height: 100%;
 }
