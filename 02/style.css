@@ -1,12 +1,16 @@
-.col-lg-4 .list-group-item.active {
-    background-color: green;
+.bg-primary {
+    background-color: green !important;
 }
 
-.col-lg-4 .list-group-item {
+.list-group-item {
     background-color: rgb(206, 206, 206);
 }
 
-.col-lg-4 {
+.list-group-item.active {
+    background-color: green;
+}
+
+.sidebar {
     background-color: rgb(206, 206, 206);
 }
 
@@ -14,3 +18,12 @@
     color: red !important;
 
 }
+
+nav.custom-navbar{
+    color: white;
+}
+
+span.navbar-title{
+    font-size: 18pt;
+}
+
