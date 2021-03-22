@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .col-lg-4 .list-group-item.active {
     background-color: green;
 }
@@ -8,4 +9,8 @@
 
 .col-lg-4 {
     background-color: rgb(206, 206, 206);
+=======
+.table td.urgent{
+    color: red !important;
+>>>>>>> alessandro
 }
