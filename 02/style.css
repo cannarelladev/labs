@@ -8,6 +8,7 @@
 
 .list-group-item.active {
     background-color: green;
+    border-color: green;
 }
 
 .sidebar {
@@ -29,4 +30,14 @@ span.navbar-title{
 
 html, body, .container-fluid, .row{
     height: 100%;
+}
+
+.btn-lg.round {
+	border-radius: 24px;
+    background-color: green;
+    color: white;
+    border-color: green;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
