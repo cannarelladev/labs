@@ -24,8 +24,9 @@ nav.custom-navbar{
     color: white;
 }
 
-span.navbar-title{
-    font-size: 18pt;
+.user-logo{
+    color: white;
+    font-size: 1.75rem;
 }
 
 html, body, .container-fluid, .row{
@@ -36,8 +37,13 @@ html, body, .container-fluid, .row{
 	border-radius: 24px;
     background-color: green;
     color: white;
-    border-color: green;
+    border: 0;
     position: fixed;
     bottom: 10px;
     right: 10px;
+}
+
+.btn-outline-white {
+    color: white;
+    border-color: white;
 }

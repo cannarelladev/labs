@@ -9,92 +9,92 @@
     <!-- Font Awesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./style.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <!--my css-->
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <header>
-      <nav class="navbar bg-primary d-flex justify-content-between custom-navbar">
-          <div>
-            <span class="align-middle navbar-title"><i class="fas fa-check-double"></i>Todo List</span>
-          </div>
-          <div>
-            <form class="d-flex justify-content-end">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-          </div>
-          <div>
-            <span class="align-middle navbar-title"><i class="far fa-user-circle"></i></span>
-          </div>
-        <!-- 
-        
-
-        
-              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          </a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              
-              
-              <li class="nav-item">
-                
-              </li>
-            </ul>
-            
-          </div>
-          -->
-      </nav>
-    </header>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 sidebar pt-2">
-          <!--menu-->
-          <div class="list-group list-group-flush">
-            <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-              All
-            </button>
-            <button type="button" class="list-group-item list-group-item-action">Important</button>
-            <button type="button" class="list-group-item list-group-item-action">Today</button>
-            <button type="button" class="list-group-item list-group-item-action">Next 7 Days</button>
-            <button type="button" class="list-group-item list-group-item-action">Private</button>
+    <header class="navbar navbar-dark custom-navbar bg-primary d-flex justify-content-between ">
+        <!-- Hamburger Menu Button-->  
+        <button class="navbar-toggler collapsed d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Title -->
+        <a class="navbar-brand" href="#"><i class="fas fa-check-double"></i> Todo List</a>
+        <!-- Search Bar-->
+        <div class="d-none d-lg-block">
+          <div class="input-group">
+            <input class="form-control border-white me-2" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-outline-white" type="button"><i class="fas fa-search"></i></button>
+            </div>
           </div>
         </div>
-        <div class="col-lg-8">
-          <!--tabella-->
-          <h1>ALL</h1>
-            <table class="table">
-              <thead>
-                <tr class="d-flex">
-                  <th class="col-lg-1 d-flex flex-column align-items-center" scope="col">Complete</th>
-                  <th class="col-lg-6 d-flex flex-column align-items-center" scope="col">Description</th>
-                  <th class="col-lg-2 d-flex flex-column align-items-center" scope="col">Privilegies</th>
-                  <th class="col-lg-3 d-flex flex-column align-items-center" scope="col">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="d-flex">
-                  <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" checked>
-                    </div>
-                  </th>
-                  <td class="col-lg-6">Lista della spesa</td>
-                  <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
-                  <td class="col-lg-3 d-flex flex-column align-items-end">Monday 22 March 2021 at 14:30</td>
+        <!-- User Logo -->
+        <div class="user-logo">
+          <i class="far fa-user-circle"></i>
+        </div>
+    </header>
+
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <nav id="sidebarMenu" class="col-lg-4 d-lg-block sidebar collapse pt-3">
+            <!-- Search Bar-->
+            <div class="dflex d-lg-none pb-3">
+              <div class="input-group">
+                <input class="form-control border-success me-2" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+            <!-- Menu -->
+            <div class="d-flex list-group list-group-flush pb-3">
+              <button type="button" class="nav-link list-group-item list-group-item-action active" aria-current="true">
+                All
+              </button>
+              <button type="button" class="nav-link list-group-item list-group-item-action">Important</button>
+              <button type="button" class="nav-link list-group-item list-group-item-action">Today</button>
+              <button type="button" class="nav-link list-group-item list-group-item-action">Next 7 Days</button>
+              <button type="button" class="nav-link list-group-item list-group-item-action">Private</button>
+            </div>
+          </nav>
+
+          <div class="col-lg-8 pt-3">
+            <!-- Todo List -->
+            <h1>ALL</h1>
+              <table class="table">
+                <thead>
+                  <tr class="d-flex">
+                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="col">Complete</th>
+                    <th class="col-lg-6 d-flex flex-column align-items-center" scope="col">Description</th>
+                    <th class="col-lg-2 d-flex flex-column align-items-center" scope="col">Privilegies</th>
+                    <th class="col-lg-3 d-flex flex-column align-items-center" scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="d-flex">
+                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" checked>
+                      </div>
+                    </th>
+                    <td class="col-lg-6">Lista della spesa</td>
+                    <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
+                    <td class="col-lg-3 d-flex flex-column align-items-end">Monday 22 March 2021 at 14:30</td>
+                  </tr>
+                  <tr class="d-flex">
+                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="">
+                      </div>
+                    </th>
+                    <td class="col-lg-6">Chiamare Mamma</td>
+                    <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
+                    <td class="col-lg-3 d-flex flex-column align-items-end">Sunday 29 March 2021 at 11:00</td>
                 </tr>
                 <tr class="d-flex">
                   <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
@@ -102,30 +102,22 @@
                       <input class="form-check-input" type="checkbox" value="">
                     </div>
                   </th>
-                  <td class="col-lg-6">Chiamare Mamma</td>
-                  <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
-                  <td class="col-lg-3 d-flex flex-column align-items-end">Sunday 29 March 2021 at 11:00</td>
-              </tr>
-              <tr class="d-flex">
-                <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="">
-                  </div>
-                </th>
-                <td class="urgent col-lg-6">Completare Labs 2</td>
-                <td class="col-lg-2 d-flex flex-column align-items-center"></td>
-                <td class="col-lg-3 d-flex flex-column align-items-end">Saturday 28 March 2021</td>
-              </tr>
-            </tbody>
-          </table>
-          
+                  <td class="urgent col-lg-6">Completare Labs 2</td>
+                  <td class="col-lg-2 d-flex flex-column align-items-center"></td>
+                  <td class="col-lg-3 d-flex flex-column align-items-end">Saturday 28 March 2021</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </div>
+          <button type="button" class='btn-lg round'>+</button>
         </div>
-        <button type="button" class='btn-lg round'>+</button>
+  
       </div>
-
-    </div>
-
+    </main>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
   </body>
 </html>
