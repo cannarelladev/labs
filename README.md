@@ -9,8 +9,8 @@ This repo is private
 
 ## Getting Started
 
-* [Labs 1](#) - first week
-* [Labs 2](#) - second week
+* [Labs 1](/01) - first week
+* [Labs 2](02/) - second week
 * [Labs 3](#) - third week
 
 ### Requirements, Language and Frameworks
