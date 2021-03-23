@@ -29,10 +29,6 @@ nav.custom-navbar{
     font-size: 1.75rem;
 }
 
-html, body, .container-fluid, .row{
-    height: 100%;
-}
-
 .btn-lg.round {
 	border-radius: 24px;
     background-color: green;
