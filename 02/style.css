@@ -1,3 +1,9 @@
+/** Body */
+
+html, body, .container-fluid, .row{
+    min-height: 100vh!important;
+}
+
 /** Colors */
 
 .bg-custom {
