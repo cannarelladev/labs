@@ -3,24 +3,27 @@
 
 ## Labs 1 - 3
 
-Main repo of Labs [1-3] team - Web Application I
+Main repo of Team Labs [1-3] - Web Application I
 
-This repo is private
+Course Credits: [@polito-WA1-AW1-2021](https://github.com/polito-WA1-AW1-2021)
 
 ## Getting Started
 
 * [Labs 1](/01) - first week
-* [Labs 2](02/) - second week
+* [Labs 2](/02) - second week
 * [Labs 3](#) - third week
 
 ### Requirements, Language and Frameworks
 
 * Javascript EM6
+* DayJS
+* SQLite3
 * Node.js LTS 14.16
-* React.js
 
 ```
-example
+npm install dayjs
+
+npm install sqlite3
 ```
 
 ## Authors
