@@ -1,0 +1,65 @@
+/** Body */
+
+html, body, .container-fluid, .row{
+    min-height: 100vh!important;
+}
+
+/** Colors */
+
+.bg-custom {
+    background-color: green !important;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text,
+.navbar-custom .navbar-user {
+    color: white;
+}
+
+.btn-outline-white {
+    color: white;
+    border-color: white;
+}
+
+.white-toggler.navbar-toggler { 
+    border-color: white; 
+} 
+
+.white-toggler .navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+} 
+
+.list-group-item {
+    background-color: rgb(231, 231, 231);
+}
+
+.list-group-item.active {
+    background-color: green;
+    border-color: green;
+}
+
+.sidebar {
+    background-color: rgb(231, 231, 231);
+}
+
+.table td.urgent{
+    color: red !important;
+}
+
+/** Typography */
+
+.navbar-user{
+    font-size: 1.75rem;
+}
+
+/** Elements */
+
+.btn-lg.round {
+	border-radius: 24px;
+    background-color: green;
+    color: white;
+    border: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
