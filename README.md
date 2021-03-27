@@ -11,7 +11,7 @@ Course Credits: [@polito-WA1-AW1-2021](https://github.com/polito-WA1-AW1-2021)
 
 * [Labs 1](/01) - first week
 * [Labs 2](/02) - second week
-* [Labs 3](#) - third week
+* [Labs 3](/03) - third week
 
 ### Requirements, Language and Frameworks
 
@@ -30,7 +30,7 @@ npm install sqlite3
 
 * **Alessandro Cannarella** - 290713 - *[LinkedIn](https://www.linkedin.com/in/alessandro-cannarella/)*
 * **Danilo D'Antoni** - 276913 - *[LinkedIn](https://www.linkedin.com/in/)*
-* **Enrico Bravi** - 283938 - *[LinkedIn](https://www.linkedin.com/in/)*
+* **Enrico Bravi** - 283938 - *[LinkedIn](https://www.linkedin.com/in/enrico-bravi-370b59198/)*
 
 ## Licence
 
