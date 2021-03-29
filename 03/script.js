@@ -41,11 +41,46 @@ function Tasks() {
         this.list.push(value);
     }
 
-    this.getTasks = () => {
-        return this.list;
+    this.addElements = (list) => {
+        for(const el of list){
+            let tr = document.createElement("tr");
+            //tr.className = "d-flex";
+            tr.classList.add("d-flex");
+            tr.innerHTML = `<th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                </div>
+                            </th>
+                            <td class="${el.getUrgent() ? 'urgent ': ''}col-lg-6">${el.getDescription()}</td>
+                            <td class="col-lg-2 d-flex flex-column align-items-center">${(el.getPrivate()) ? '<i class="fas fa-user"></i>' : ''}</td>
+                            <td class="col-lg-3 d-flex flex-column align-items-end">${el.getDeadline() ? dayjs(el.getDeadline()).format('DD/MM/YYYY HH:mm:ss') : ''}</td>`;
+            tbody.appendChild(tr);
+        }
     }
 
-    this.sortAndPrint = () => {
+    this.getAllTasks = () => {
+        this.addElements(this.list);
+    }
+
+    this.getImportantTasks = () => { 
+        const tmp = this.list.filter( e => e.getUrgent() );
+        this.addElements(tmp);
+    }
+
+    this.getTodayTasks = () => {
+
+    }
+
+    this.getNextSevenDaysTasks = () => {
+
+    }
+
+    this.getPrivateTasks = () => {
+        const tmp = this.list.filter( e => e.getPrivate());
+        this.addElements(tmp);
+    }
+
+    /*this.sortAndPrint = () => {
         let definedDeadline = this.list.filter( el => el.deadline!=undefined );
         let notDefinedDeadline = this.list.filter ( el => el.deadline==undefined );
 
@@ -62,7 +97,7 @@ function Tasks() {
     this.filterAndPrint = () => {
         const definedUrgent = [ ...this.list.filter( task => task.urgent === true )];
         definedUrgent.forEach( task => console.log(task.toString()) );
-    };
+    };*/
 
 }
 
@@ -70,38 +105,34 @@ const task1 = new Task(1, 'Fare la spesa', false, true, "2021-03-25T10:00:00");
 const task2 = new Task(2, 'Dentista', true, true, "2021-03-12T12:00:00");
 const task3 = new Task(3, 'Meccanico', false, true);
 const task4 = new Task(4, 'Lezione', false, false, "2021-04-01T09:00:00");
+const task5 = new Task(5, 'Gasarsi', false, false, "2021-05-06T09:30:00");
 
 let tasksList = new Tasks();
 tasksList.add(task1);
 tasksList.add(task2);
 tasksList.add(task3);
 tasksList.add(task4);
+tasksList.add(task5);
 
 let tbody = window.document.getElementById("todolist");
-const list = tasksList.getTasks();
+tasksList.getAllTasks();
 
-for(const el of list){
-    let tr = document.createElement("tr");
-    //tr.className = "d-flex";
-    tr.classList.add("d-flex");
-    tr.innerHTML = `<th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
-                        </div>
-                    </th>
-                    <td class="${el.getUrgent() ? 'urgent ': ''}col-lg-6">${el.getDescription()}</td>
-                    <td class="col-lg-2 d-flex flex-column align-items-center">${(el.getPrivate()) ? '<i class="fas fa-user"></i>' : ''}</td>
-                    <td class="col-lg-3 d-flex flex-column align-items-end">${el.getDeadline() ? dayjs(el.getDeadline()).format('DD/MM/YYYY HH:mm:ss') : ''}</td>`;
-    tbody.appendChild(tr);
-}
-
-/*<tr class="d-flex">
-    <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" checked>
-        /div>
-    </th>
-    <td class="col-lg-6">Lista della spesa</td>
-    <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
-    <td class="col-lg-3 d-flex flex-column align-items-end">Monday 22 March 2021 at 14:30</td>
-</tr>*/
+const menuFilters = document.getElementById("menu_filters");
+menuFilters.addEventListener('click', event =>{
+    switch(event.target.id){
+        case 'all': 
+            tbody.innerHTML = " ";
+            //tbody.removeChild(tbody.childNodes)   //NON funziona!!
+            tasksList.getAllTasks();
+            break;
+        case 'important': 
+            tbody.innerHTML = " ";    
+            tasksList.getImportantTasks();   
+        break;
+        case 'private':
+            tbody.innerHTML = " ";   
+            tasksList.getPrivateTasks();   
+        break;
+    
+   }
+});
