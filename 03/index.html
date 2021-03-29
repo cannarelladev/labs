@@ -17,6 +17,9 @@
 
     <!-- DayJS -->
     <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+    <!-- Custom JS -->
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header class="navbar navbar-custom bg-custom d-flex justify-content-between ">
@@ -55,14 +58,12 @@
               </div>
             </div>
             <!-- Menu -->
-            <div class="d-flex list-group list-group-flush">
-              <button type="button" class="nav-link list-group-item list-group-item-action active" aria-current="true">
-                All
-              </button>
-              <button type="button" class="nav-link list-group-item list-group-item-action">Important</button>
-              <button type="button" class="nav-link list-group-item list-group-item-action">Today</button>
-              <button type="button" class="nav-link list-group-item list-group-item-action">Next 7 Days</button>
-              <button type="button" class="nav-link list-group-item list-group-item-action">Private</button>
+            <div id="menu_filters" class="d-flex list-group list-group-flush">
+              <button id="all" type="button" class="nav-link list-group-item list-group-item-action active">All</button>
+              <button id="important" type="button" class="nav-link list-group-item list-group-item-action">Important</button>
+              <button id="today" type="button" class="nav-link list-group-item list-group-item-action">Today</button>
+              <button id="next_7_days" type="button" class="nav-link list-group-item list-group-item-action">Next 7 Days</button>
+              <button id="private" type="button" class="nav-link list-group-item list-group-item-action">Private</button>
             </div>
           </nav>
 
@@ -78,37 +79,8 @@
                     <th class="col-lg-3 d-flex flex-column align-items-center" scope="col">Date</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr class="d-flex">
-                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" checked>
-                      </div>
-                    </th>
-                    <td class="col-lg-6">Lista della spesa</td>
-                    <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
-                    <td class="col-lg-3 d-flex flex-column align-items-end">Monday 22 March 2021 at 14:30</td>
-                  </tr>
-                  <tr class="d-flex">
-                    <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="">
-                      </div>
-                    </th>
-                    <td class="col-lg-6">Chiamare Mamma</td>
-                    <td class="col-lg-2 d-flex flex-column align-items-center"><i class="fas fa-users"></i></td>
-                    <td class="col-lg-3 d-flex flex-column align-items-end">Sunday 29 March 2021 at 11:00</td>
-                </tr>
-                <tr class="d-flex">
-                  <th class="col-lg-1 d-flex flex-column align-items-center" scope="row">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="">
-                    </div>
-                  </th>
-                  <td class="urgent col-lg-6">Completare Labs 2</td>
-                  <td class="col-lg-2 d-flex flex-column align-items-center"></td>
-                  <td class="col-lg-3 d-flex flex-column align-items-end">Saturday 28 March 2021</td>
-                </tr>
+                <tbody id="todolist">
+                  
               </tbody>
             </table>
             
