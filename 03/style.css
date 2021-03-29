@@ -1,7 +1,9 @@
 /** Body */
 
-html, body, .container-fluid, .row{
-    min-height: 100vh!important;
+@media screen and (min-width: 992px) {
+    html, body, .container-fluid, .row{
+        min-height: 100vh!important;
+    }
 }
 
 /** Colors */
