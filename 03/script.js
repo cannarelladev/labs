@@ -68,11 +68,16 @@ function Tasks() {
     }
 
     this.getTodayTasks = () => {
-
+        const today = dayjs();
+        const tmp = this.list.filter( e => e.getDeadline() ? dayjs(e.getDeadline()).format('DD/MM/YYYY') === today.format('DD/MM/YYYY') : false );
+        this.addElements(tmp);
     }
 
     this.getNextSevenDaysTasks = () => {
-
+        const today = dayjs();
+        const endDay = dayjs().add(8, 'day');
+        const tmp = this.list.filter( e => e.getDeadline() ?  dayjs(e.getDeadline()).isAfter(today) && dayjs(e.getDeadline()).isBefore(endDay) : false);
+        this.addElements(tmp);
     }
 
     this.getPrivateTasks = () => {
@@ -105,7 +110,7 @@ const task1 = new Task(1, 'Fare la spesa', false, true, "2021-03-25T10:00:00");
 const task2 = new Task(2, 'Dentista', true, true, "2021-03-12T12:00:00");
 const task3 = new Task(3, 'Meccanico', false, true);
 const task4 = new Task(4, 'Lezione', false, false, "2021-04-01T09:00:00");
-const task5 = new Task(5, 'Gasarsi', false, false, "2021-05-06T09:30:00");
+const task5 = new Task(5, 'Gasarsi', false, false, "2021-03-29T09:30:00");
 
 let tasksList = new Tasks();
 tasksList.add(task1);
@@ -116,23 +121,48 @@ tasksList.add(task5);
 
 let tbody = window.document.getElementById("todolist");
 tasksList.getAllTasks();
+let activeState = document.getElementById('all');
 
 const menuFilters = document.getElementById("menu_filters");
 menuFilters.addEventListener('click', event =>{
     switch(event.target.id){
-        case 'all': 
+        case 'all':
+            activeState.classList.toggle('active');
+            event.target.classList.toggle('active');
+            activeState = event.target;
             tbody.innerHTML = " ";
-            //tbody.removeChild(tbody.childNodes)   //NON funziona!!
             tasksList.getAllTasks();
             break;
-        case 'important': 
+        case 'important':
+            activeState.classList.toggle('active');
+            event.target.classList.toggle('active');
+            activeState = event.target;
             tbody.innerHTML = " ";    
             tasksList.getImportantTasks();   
         break;
         case 'private':
+            activeState.classList.toggle('active');
+            event.target.classList.toggle('active');
+            activeState = event.target;
             tbody.innerHTML = " ";   
             tasksList.getPrivateTasks();   
         break;
+        case 'next_7_days':
+            activeState.classList.toggle('active');
+            event.target.classList.toggle('active');
+            activeState = event.target;
+            tbody.innerHTML = " ";   
+            tasksList.getNextSevenDaysTasks();   
+        break;
+        case 'today':
+            activeState.classList.toggle('active');
+            event.target.classList.toggle('active');
+            activeState = event.target;
+            tbody.innerHTML = " ";   
+            tasksList.getTodayTasks();   
+        break;
+        default:
+            break;
     
    }
 });
